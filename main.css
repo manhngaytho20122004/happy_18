@@ -1,0 +1,438 @@
+*{
+   margin:0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Times New Roman', Times, serif;
+}
+.close {
+    display: none;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: navy;
+}
+.gift_container{
+    position: relative;
+    animation: up_down 1.5s linear infinite;
+}
+@keyframes up_down {
+     0%{
+        transform:  rotate(10deg);
+     }
+    
+     25% {
+        transform: rotate(0deg);
+     }
+     50% {
+        transform: rotate(-10deg);
+     }
+     75% {
+        transform: rotate(0deg);
+     }
+     100% {
+        transform: rotate(10deg);
+     }
+}
+.gift {
+    width: 250px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+}
+.gift::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 200px;
+    background-color: rgb(230, 202, 21);
+    left: 100px;
+}
+.gift::after{
+       content: '';
+        position: absolute;
+        width: 250px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+}
+.gift_lid {
+    background-color: red;
+    width: 280px;
+    height: 70px;
+    position: absolute;
+    top:-70px;
+    left: -15px;
+}
+.gift_lid::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-color: rgb(230, 202, 21);
+    left: 115px;
+}
+.bow1{
+    background-color: rgb(230, 202, 21);
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    top:-30px;
+    left:71px;
+    border-radius: 10px 250px;
+}
+.bow2 {
+    background-color: rgb(230, 202, 21);
+    width: 71px;
+    height: 30px;
+    position: absolute;
+    top: -30px;
+    right: 70px;
+    border-radius: 250px 10px;
+}
+.open {
+    transform: translateY(-300px);
+    transition: 1s;
+}
+   /* ============= css content ============== */
+.content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: change_colorBackground 5s linear infinite;
+}
+@keyframes change_colorBackground {
+    0%{
+        background-color:#90EE90;
+    }
+    25% {
+        background-color: #FFDAB9;
+    }
+    50%{
+        background-color:#98FB98 ;
+    }
+    100% {
+       background-color:#66CDAA;
+    }
+}
+li {
+    list-style: none;
+}
+.lamp {
+    display: flex;
+    width: 60%;
+    margin: 18px auto;
+    justify-content: space-between;
+}
+.item{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: black 0.5px solid;
+    border-radius: 50%;
+    position: relative;
+    
+}
+.item::before{
+    content: '';
+    width: 13px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: -18px;
+    left:8px;
+}
+.item {
+    animation: change_lamp 1s ease infinite;
+}
+.item2 {
+    animation: change_lamp 1s ease  infinite;
+    animation-delay: 0.5s;
+}
+.item3 {
+    animation: change_lamp 1s ease infinite;
+    animation-delay: 1s;
+}
+.item4{
+    animation: change_lamp 1s ease infinite;
+    animation-delay: 1.5s;
+}
+.item5 {
+    animation: change_lamp 1s ease infinite;
+    animation-delay: 2s;
+}
+.item6 {
+    animation: change_lamp 1s ease infinite;
+    animation-delay: 2.5s;
+}
+@keyframes change_lamp {
+    to{
+        background-color: white
+    }
+}
+.banner {
+    width: 30%;
+    height: 50%;
+    text-align: center;
+    transform: translateY(-300px);
+    animation: show 1s linear  ;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+@keyframes show{
+    to{
+        position: absolute;
+        top: 400px
+    }
+    from {
+        position: absolute;
+        top: -300px;
+    }
+}
+.banner img  {
+   width: 100%;
+   height: auto;
+}
+.chocolate {
+    width: 15%;
+    height: 130px;
+    background-color: #8B4513;
+    position: absolute;
+    bottom: 100px;
+    left: 42.5%;
+}
+.chocolate::before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 30px;
+    top :-5px;
+    left: -5%;
+    border-radius: 50px;
+    background-color: white;
+}
+.chocolate::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 10px;
+    bottom: 0px;
+    left: -25%;
+    background-color: white;
+}
+.decorate1 {
+    background-color: #808000;
+    width: 100%;
+    height: 20px;
+    position: absolute; 
+    top: 40px;
+}
+.decorate2 {
+    background-color: #808000;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: 30px;
+}
+.cream1 {
+    width: 20px;
+    height: 30px;
+    background-color: white;
+    border-radius: 0px 0px 50% 50%;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+.cream2 {
+    width: 20px;
+    height: 40px;
+    background-color: white;
+    border-radius: 0px 0px 50% 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.candle {
+    position: relative;
+    width: 3%;
+    height: 45px;
+    background-color: purple;
+    position: absolute;
+    top: -50px;
+    left:47% ;
+}
+
+.candle::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -100%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #FF0033, transparent);
+    border-radius: 0 80% 40% 80%;
+    transform: rotate(42deg);
+    animation: flicker 2s infinite alternate;
+    
+}
+.chocolate {
+    opacity: 0;
+    animation: show_cake 2s linear;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
+}
+@keyframes show_cake {
+      0%{
+        opacity: 0;
+      }
+      100%  {
+       opacity: 1;
+      }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+.balloon_img1 {
+    width: 100%;
+    position: absolute;
+    left:0;
+    transform: translateY(100vh);
+    
+}
+.balloon_img1 img {
+   width: 100%;
+  animation: balloon_show 3s linear; 
+  animation-delay: 3s;
+animation-fill-mode: forwards;
+}
+@keyframes balloon_show {
+   to{
+    position: absolute;
+    top: -102vh;
+   }
+   from {
+    position: absolute;
+    top: 100px;
+   }
+}
+.balloon {
+    position: fixed ;
+    width: 100%;
+    height: 55%;
+    bottom: 0;
+    left: 88px;
+    display: flex;
+    
+}
+.item_ballon {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background-color: #FF4500;
+    text-align: center;
+    margin: 20px;
+    transform: rotate(45deg);
+}
+.item_ballon::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: #FF4500;
+    position: absolute;
+    left: -20px;
+    top:0;
+    border-radius: 50%;
+    z-index: -1;
+}
+.item_ballon::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: #FF4500;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+.item_ballon span {
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform: rotate(316deg);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+.heart1  {
+    position: absolute;
+    left: 400px;
+    animation: heart_fly 2s linear ;
+    animation-fill-mode: forwards;
+    animation-delay: 12s;
+}
+.heart2  {
+    position: absolute;
+     left: 480px;
+    animation: heart_fly 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 13s;
+}
+.heart3  {
+    position: absolute;
+    left: 560px;
+    animation: heart_fly 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay:14s ;
+}
+.heart4{
+    position: absolute;
+        left: 640px;
+        animation: heart_fly 2s linear;
+        animation-fill-mode: forwards;
+        animation-delay: 15s;
+}
+.heart5{
+    position: absolute;
+    left: 730px;
+    animation: heart_fly 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 16s;
+}
+.heart6 {
+    position: absolute;
+    left: 810px;
+    animation: heart_fly 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 17s;
+}
+.heart7 {
+    position: absolute;
+    left: 900px;
+    animation: heart_fly 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 18s;
+}
+@keyframes heart_fly {
+    to{
+        bottom: 320px;
+    }
+   from {
+        bottom: 0px;
+   }
+}
